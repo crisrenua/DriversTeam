@@ -1,4 +1,4 @@
-var script = document.createElement('script');
+let script = document.createElement('script');
 script.src = 'https://kit.fontawesome.com/2dd15a3ce5.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
