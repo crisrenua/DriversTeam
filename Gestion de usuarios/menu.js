@@ -9,8 +9,8 @@ document.write(
     + ' aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">'
     + '<span class="navbar-toggler-icon"></span>'
     + '</button>'
-    + '<div class="collapse navbar-collapse" id="navbarTogglerDemo01">' +
-    +   '<a class="navbar-brand" href="#"> Driver\'s Pub <i class="fas fa-beer"></i> <i class="fas fa-pizza-slice fa-pulse"></i></a>'
+    + '<div class="collapse navbar-collapse" id="navbarTogglerDemo01">' 
+    +   '<a class="navbar-brand" href="#">Driver\'s Pub <i class="fas fa-beer"></i> <i class="fas fa-pizza-slice fa-pulse"></i></a>'
     + '<ul class="navbar-nav me-auto mb-2 mb-lg-0">'
     + '<li class="nav-item">'
     + '<a class="nav-link" aria-current="page" href="#">Inicio</a>'
