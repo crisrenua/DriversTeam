@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2dd15a3ce5.js" crossorigin="anonymous"></script>
+    <link href="/Gestion de usuarios/index.css" rel="stylesheet">
+
 </head>
 <body>
 
-    <h1>Registro de ventas</h1>
+    <script src="/Gestion de usuarios/menu.js"></script>
 
-    <br>
-
-    <button type="button">
-        <a href="formulario_ventas.html">Agregar venta</a>
-    </button>
     
-    <table border="1">
+
+<div class="container align-self-center">
+
+    <a class="btn btn-dark" href="formulario_ventas.html">
+        Agregar ventas
+    </a>
+
+    <table class="table caption-top table-hover">
+        <caption>Registro de ventas</caption>
         <thead>
             <tr>
-                <th>Id venta</th>
-                <th>Estado</th>
-                <th>Fecha</th>
-                <th>Productos</th>
-                <th>Cantidad</th>
-                <th>Valor/unit</th>
-                <th>Valor venta</th>
-                <th>Cliente</th>
-                <th>Id cliente</th>
-                <th>Vendedor</th>
+                <th scope="col">Id venta</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Valor/unit</th>
+                <th scope="col">Valor venta</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Id cliente</th>
+                <th scope="col">Vendedor</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>001</th>
-                <th>En proceso</th>
-                <th>27-sep-2021</th>
-                <th> Hamburguesa <br> Cerveza </th>
-                <th> 2 <br> 2 </th>
-                <th> 20.000 <br> 30.000 </th>
-                <th> 100.000 </th>
-                <th> Juan Sanchez </th>
-                <th> 123456789 </th>
-                <th> Enrique Perez </th>                
+                <th scope="col">001</th>
+                <td>En proceso</td>
+                <td>27-sep-2021</td>
+                <td> Hamburguesa <br> Cerveza </td>
+                <td> 2 <br> 2 </td>
+                <td> 20.000 <br> 30.000 </td>
+                <td> 100.000 </td>
+                <td> Juan Sanchez </td>
+                <td> 123456789 </td>
+                <td> Enrique Perez </td>
+                <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    user = "Mark" data-bs-whatever="admin1@gmail.com"><i class="fas fa-pen-square"></i></button></td>
+                    
             </tr>
             
         </tbody>
     </table>
+</div>
 
 </body>
 </html>
