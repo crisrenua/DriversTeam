@@ -13,27 +13,27 @@ document.write(
     +   '<a class="navbar-brand" href="#">Driver\'s Pub <i class="fas fa-beer"></i> <i class="fas fa-pizza-slice fa-pulse"></i></a>'
     + '<ul class="navbar-nav me-auto mb-2 mb-lg-0">'
     + '<li class="nav-item">'
-    + '<a class="nav-link" aria-current="page" href="#">Inicio</a>'
+    + '<a class="nav-link" aria-current="page" href="./../index.html">Inicio</a>'
     + ' </li>'
 
     + '<li class="nav-item dropdown">'
     + '<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" data-bs-toggle="dropdown" aria-expanded="false"> Administrar productos </a>'
     + '<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">'
-    + '<li><a class="dropdown-item" href="#">Registrar producto</a></li>'
-    + '<li><a class="dropdown-item" href="#">Listar productos</a></li>'
+    + '<li><a class="dropdown-item" href="./../Productos/registro.html">Registrar producto</a></li>'
+    + '<li><a class="dropdown-item" href="./../Productos/productos.html">Listar productos</a></li>'
     + '</ul>'
     + '</li>'
 
     + '<li class="nav-item dropdown">'
     + '<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" data-bs-toggle="dropdown" aria-expanded="false">Administrar ventas</a>'
     + '<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">'
-    + '<li><a class="dropdown-item" href="#">Registrar venta</a></li>'
-    + '<li><a class="dropdown-item" href="#">Listar ventas</a></li>'
+    + '<li><a class="dropdown-item" href="./../Ventas/formulario_ventas.html">Registrar venta</a></li>'
+    + '<li><a class="dropdown-item" href="./../Ventas/ventas.html">Listar ventas</a></li>'
     + '</ul>'
     + '</li>'
 
     + '<li class="nav-item">'
-    + '<a class="nav-link active">Administrar usuarios</a>'
+    + '<a class="nav-link active" href="./../Gestion_de_usuarios/index.html">Administrar usuarios</a>'
     + '</li>'
 
 
