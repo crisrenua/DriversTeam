@@ -1,38 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivers Team</title>
+    <title>Ventas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/2dd15a3ce5.js" crossorigin="anonymous"></script>
+    <link href="../Gestion de usuarios/index.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>Menu Opciones</h1>
-    <div>
-        <input type="submit" value="Usuarios">
+
+    <script src="./../menu.js"></script>
+
+    <div class="container align-self-center">
+
+        <h1>Menu de opciones</h1>
+
         <br>
-    </div>
-    
-    <br>
 
-    <div>
-        <input type="submit" value="Ventas">
+        <div>
+            <a class="btn btn-dark" href="Gestion_de_usuarios/index.html">
+            Usuarios
+            </a>
+        </div>
+
         <br>
-    </div>
 
-    <br>
-
-    <div>
-        <input type="submit" value="Productos">
+        <div>
+            <a class="btn btn-dark" href="Ventas/ventas.html">
+                Ventas
+            </a>
+        </div>
+        
         <br>
-    </div>
 
-    <br>
-
-    <div>
-        <input type="submit" value="Cerrar Sesion">
+        <div>
+            <a class="btn btn-dark" href="Productos/productos.html">
+                Productos
+            </a>
+        </div>
+        
         <br>
+
+        <div>
+            <a class="btn btn-dark" href="index.html">
+                Cerrar sesion
+            </a>
+        </div>
+        
+        <br>
+
+    <!-- Button trigger modal 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch static backdrop modal
+</button>-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Actualizar venta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Estado:</label>
+                            <select class="form-select" id="message-tex" aria-label="Default select example">
+                                <option selected disabled>Seleccione un estado</option>
+                                <option value="1">En proceso</option>
+                                <option value="2">Cancelada</option>
+                                <option value="2">Entregada</option>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cliente" class="col-form-label">Cliente:</label>
+                            <input type="text" class="form-control" id="cliente">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idCliente" class="col-form-label">Id cliente:</label>
+                            <input type="text" class="form-control" id="idCliente">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success">Actualizar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
+    <script>
+        const exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+            const idVenta = button.getAttribute('idVenta')
+            const cliente = button.getAttribute('cliente')
+            const idCliente = button.getAttribute('idCliente')
+            // If necessary, you could initiate an AJAX request here
+            const idprod = button.getAttribute('idprod');
+            // and then do the updating in a callback.
+            //
+            // Update the modal's content.
+            var modalTitle = exampleModal.querySelector('.modal-title')
+            var modalBodyInput = exampleModal.querySelector('.modal-body input[id="cliente"]')
+            var modalBodyInput2 = exampleModal.querySelector('.modal-body input[id="idCliente"]')
+
+            modalTitle.textContent = 'Venta -  ' + idVenta
+            modalBodyInput.value = cliente
+            modalBodyInput2.value = idCliente
+
+        })
+
+
+    </script>
 </body>
+
 </html>
