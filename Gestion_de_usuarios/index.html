@@ -18,7 +18,7 @@
 
 <body>
 
-    <script src="./menu.js"></script>
+    <script src="/menu.js"></script>
 
     <!--Lista de usuarios-->
 
@@ -57,15 +57,15 @@
                     <form>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Correo:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="recipient-name" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Estado:</label>
                             <select class="form-select" id="message-tex" aria-label="Default select example">
-                                <option selected disabled>Seleccione un estado</option>
-                                <option value="1">Pendiente</option>
-                                <option value="2">No autorizado</option>
-                                <option value="3">Autorizado</option>
+                                <option disabled>Seleccione un estado</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="No autorizado">No autorizado</option>
+                                <option selected value="Autorizado">Autorizado</option>
                             </select>
                         </div>
                     </form>
@@ -79,15 +79,7 @@
     </div>
 
     <script src="./modal.js"></script>
-    <!-- Firebase SDK (Software Development Kit) siempre se debe usar y debe ser el primero de colocar -->
-    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
-
-    <!-- Adicionar productos de Firebase que vamos a usar -->
-    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore-compat.js"></script>
-
-
-    <script src="./Firebase.js"></script>
+    <script type = "module" src="./Firebase.js"></script>
 </body>
 
 </html>
