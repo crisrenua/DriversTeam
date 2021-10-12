@@ -13,7 +13,8 @@
         crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/2dd15a3ce5.js" crossorigin="anonymous"></script>
-    <link href="../Gestion de usuarios/index.css" rel="stylesheet">
+    <link href="../Gestion_de_usuarios/index.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -54,47 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Cerveza</td>
-                    <td>$ 12.000</td>
-                    <td> Disponible </td> 
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
-                            user = "Cerveza" data-bs-whatever="$ 12.000"><i class="fas fa-pen-square"></i></button></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Cóctel</td>
-                    <td>$ 20.000</td>
-                    <td> Disponible </td>
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
-                       user = "Cóctel" data-bs-whatever="$ 20.000"><i class="fas fa-pen-square"></i></button></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Gaseosa</td>
-                    <td>$ 6.000</td>
-                    <td> Disponible </td> 
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                       user = "Gaseosa" data-bs-whatever="$ 6.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Vino</td>
-                    <td>$ 55.000</td>
-                    <td> Disponible </td>
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                       user ="Vino" data-bs-whatever="$ 55.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Agua</td>
-                    <td>$ 5.000</td>
-                    <td> Disponible </td>
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                        user ="Agua" data-bs-whatever="$ 5.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
-                </tr>
-                
+                <tbody id="tableBody">
             </tbody>
         </table>
 
@@ -195,10 +156,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
         integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./JS/login.js"></script>
 
 
-    <script  src="/Productos/productos.js"></script>
+    <script  src="./productos.js"></script>
 </body>
 
 </html>
