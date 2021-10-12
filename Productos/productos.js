@@ -37,7 +37,6 @@ async function adicionarInfo(infoUno, infoDos, infoTres, infoCuatro){
     }
 
     await guardarInfo(info)
-    idProducto
 }
 
 async function guardarInfo(info){
