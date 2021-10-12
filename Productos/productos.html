@@ -23,8 +23,26 @@
 
         <div class="container align-self-center">
 
+        <br>
+
+            <h1>Productos</h1>
+
+        <br>
+        
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Id producto, descripcion, estado "
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-dark" type="button" id="button-addon2">Buscar</button>
+        </div>
+        
+        <br>
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroProducto" user="Cerveza"
+            data-bs-whatever="$ 12.000">Registro producto</button>
+        
+        <br>
+
         <table class="table caption-top table-hover">
-            <caption>Lista de Productos</caption>
 
             <thead>
                 <tr>
@@ -41,7 +59,7 @@
                     <td>Cerveza</td>
                     <td>$ 12.000</td>
                     <td> Disponible </td> 
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
                             user = "Cerveza" data-bs-whatever="$ 12.000"><i class="fas fa-pen-square"></i></button></td>
                 </tr>
                 <tr>
@@ -49,7 +67,7 @@
                     <td>Cóctel</td>
                     <td>$ 20.000</td>
                     <td> Disponible </td>
-                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
                        user = "Cóctel" data-bs-whatever="$ 20.000"><i class="fas fa-pen-square"></i></button></td>
                 </tr>
                 <tr>
@@ -58,7 +76,7 @@
                     <td>$ 6.000</td>
                     <td> Disponible </td> 
                     <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                       user = "Gaseosa" data-bs-whatever="$ 6.000" data-bs-target="#exampleModal"><i class="fas fa-pen-square"></i></button></td>
+                       user = "Gaseosa" data-bs-whatever="$ 6.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
@@ -66,7 +84,7 @@
                     <td>$ 55.000</td>
                     <td> Disponible </td>
                     <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                       user ="Vino" data-bs-whatever="$ 55.000" data-bs-target="#exampleModal"><i class="fas fa-pen-square"></i></button></td>
+                       user ="Vino" data-bs-whatever="$ 55.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
@@ -74,7 +92,7 @@
                     <td>$ 5.000</td>
                     <td> Disponible </td>
                     <td><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                        user ="Agua" data-bs-whatever="$ 5.000" data-bs-target="#exampleModal"><i class="fas fa-pen-square"></i></button></td>
+                        user ="Agua" data-bs-whatever="$ 5.000" data-bs-target="#modalEditar"><i class="fas fa-pen-square"></i></button></td>
                 </tr>
                 
             </tbody>
@@ -87,8 +105,8 @@
         Launch static backdrop modal
     </button>-->
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <!-- Modal editar-->
+    <div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -122,28 +140,49 @@
         </div>
     </div>
 
-    <script>
-        const exampleModal = document.getElementById('exampleModal')
-        exampleModal.addEventListener('show.bs.modal', function (event) {
-            // Button that triggered the modal
-            const button = event.relatedTarget
-            // Extract info from data-bs-* attributes
-            const usuario = button.getAttribute('user')
-            const recipient = button.getAttribute('data-bs-whatever')
-             // If necessary, you could initiate an AJAX request here
-            const idprod = button.getAttribute('idprod');
-            // and then do the updating in a callback.
-            //
-            // Update the modal's content.
-            var modalTitle = exampleModal.querySelector('.modal-title')
-            var modalBodyInput = exampleModal.querySelector('.modal-body input')
+    <!-- Modal registro producto-->
+    <div class="modal fade" id="modalRegistroProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro de Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb">
+                            <input type="number" class="" id="idprod" placeholder="Id producto">
+                        </div>
+                        <div class="mb">
+                            <label for="descripcion" class="col-form-label">Descripción del Producto:</label>
+                            <input type="text" class="form-control" id="descripcion">
+                        </div>
+                        <div class="mb">
+                            <label for="valor unit" class="col-form-label">Valor Unitario:</label>
+                            <input type="number" class="form-control" id="valor unit">
+                        </div>
+                    
+                        <div class="mb">
+                            <label for="message-text" class="col-form-label">Estado:</label>
+                            <select class="form-select" id="message-tex" aria-label="Default select example">
+                                <option selected disabled>Seleccione un estado</option>
+                                <option value="1">Disponible</option>
+                                <option value="2">No disponible</option>
+                    
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            modalTitle.textContent = 'Producto ' + usuario
-            modalBodyInput.value = recipient
-        })
-
-
-    </script>
+    <script src="/Productos/modal-editar.js"></script>
 </body>
 
 </html>
