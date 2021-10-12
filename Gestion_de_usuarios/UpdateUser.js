@@ -14,8 +14,6 @@ const dataBase = firebaseApp.firestore();
 const exampleModal = document.getElementById('exampleModal');
 const selectState = document.getElementById("estado");
 const selectRole = document.getElementById("rol");
-let myModalEl = document.getElementById('exampleModal');
-let modal = bootstrap.Modal.getInstance(myModalEl);
 let iniState = "";
 let iniRole = "";
 let iniIdUser = "";
@@ -28,7 +26,7 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
   const tableIdUser = document.getElementById(id).innerHTML.trim().replaceAll("<td>", "/").replaceAll("</td>", "").split("/")[1];
   getInfo(tableIdUser, tableState, tableRole);
   selectState.value = tableState;
-  return
+  return;
 });
 
 //Function that saves the info from the table in global variables
@@ -48,37 +46,37 @@ btnModify.addEventListener("click", (event) => {
       icon: 'error',
       title: 'No se ha modificado el usuario',
       text: 'por favor elija un estado diferente para modificar.'
-    })
+    });
     return;
-  } else if(selectState.value == "Pendiente"){
+  } else if(selectState.value === "Pendiente"){
 
       if(selectRole.value === "Administrador" || selectRole.value === "Vendedor"){
         Swal.fire({
           icon: 'error',
           title: 'Error',
           text: 'No puede asignar este rol con estado Pendiente.'
-        })
-        return
+        });
+        return;
       }
-  }else if(selectState.value == "No autorizado"){
+  }else if(selectState.value === "No autorizado"){
 
     if(selectRole.value === "Administrador" || selectRole.value === "Vendedor"){
       Swal.fire({
         icon: 'error',
         title: 'Error',
         text: 'No puede asignar este rol con estado No autorizado.'
-      })
-      return
+      });
+      return;
     }
 
-  }else if(selectState.value == "Autorizado"){
+  }else if(selectState.value === "Autorizado"){
     if(selectRole.value === "Ninguno"){
       Swal.fire({
         icon: 'info',
         title: 'Campo no valido',
         text: 'Debe asignar un rol con el estado Autorizado.'
-      })
-      return
+      });
+      return;
     }
   }
     updateUser(iniIdUser, selectRole.value, selectState.value);
@@ -92,13 +90,14 @@ btnModify.addEventListener("click", (event) => {
 //Function to save changes in a specific user in fields such as role and state.
 async function updateUser(id, role, state) {
   await dataBase.collection("usuarios").doc(id).update({
-    rol: role, estado: state
-  })
+    rol: role, 
+    estado: state
+  });
   Swal.fire({
     icon: 'success',
     title: '',
     text: 'Usuario modificado con exito.'
-  })
+  });
 }
 
 //Event in select state to disable role options depends on what was selected as a state.
@@ -106,22 +105,22 @@ selectState.addEventListener("change", () => {
 
   const state = selectState.value;
 
-  if (state == "Pendiente") {
+  if (state === "Pendiente") {
     document.getElementById("Administrador").disabled = true;
     document.getElementById("Vendedor").disabled = true;
     document.getElementById("Ninguno").disabled = false;
-    return
+    return;
   }
-  if (state == "No autorizado") {
+  if (state === "No autorizado") {
     document.getElementById("Administrador").disabled = true;
     document.getElementById("Vendedor").disabled = true;
     document.getElementById("Ninguno").disabled = false;
-    return
+    return;
   }
-  if (state == "Autorizado") {
+  if (state === "Autorizado") {
     document.getElementById("Administrador").disabled = false;
     document.getElementById("Vendedor").disabled = false;
     document.getElementById("Ninguno").disabled = true;
-    return
+    return;
   }
 });
