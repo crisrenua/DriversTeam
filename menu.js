@@ -19,7 +19,6 @@ document.write(
     + '<li class="nav-item dropdown">'
     + '<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" data-bs-toggle="dropdown" aria-expanded="false"> Administrar productos </a>'
     + '<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">'
-    + '<li><a class="dropdown-item" href="./../Productos/registro.html">Registrar producto</a></li>'
     + '<li><a class="dropdown-item" href="./../Productos/productos.html">Listar productos</a></li>'
     + '</ul>'
     + '</li>'
