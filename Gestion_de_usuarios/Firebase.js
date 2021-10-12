@@ -1,4 +1,4 @@
-import * as fire from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-compat.min.js";
+// import * as fire from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-compat.min.js";
 const firebaseConfig = {
 
   apiKey: "AIzaSyDCAa6J48jm7cEHdKJJt2Qzbu6jKVUg-Hc",
@@ -10,6 +10,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+let tableIndex = 1;
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const dataBase = firebaseApp.firestore();
 const onUsers = (callback) => dataBase.collection("usuarios").onSnapshot(callback);
@@ -21,6 +22,7 @@ async function usersList() {
   onUsers((users) => {
 
     const table = document.getElementById("tableBody");
+    const btnModify = document.getElementById("modificar")
     table.innerHTML = '';
 
     users.forEach(user => {
@@ -45,14 +47,16 @@ async function usersList() {
       button.dataset.bsTarget = "#exampleModal"
       button.dataset.user = userData.nombre;
       button.dataset.bsWhatever = userData.correo;
+      button.dataset.index= tableIndex;
+      newRow.id= tableIndex;
       newCell.appendChild(newText);
       newCell2.appendChild(newText2);
       newCell3.appendChild(newText3);
       newCell4.appendChild(newText4);
       newCell5.appendChild(newText5);
       newCell6.appendChild(button);
-
+      tableIndex++;
     });
-
+tableIndex = 1;
   })
 }

@@ -60,26 +60,38 @@
                             <input type="text" class="form-control" id="recipient-name" readonly>
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Estado:</label>
-                            <select class="form-select" id="message-tex" aria-label="Default select example">
-                                <option disabled>Seleccione un estado</option>
+                            <label for="estado" class="col-form-label">Estado:</label>
+                            <select class="form-select" id="estado" aria-label="Default select example">
+                                <option selected disabled value = "Ninguno">Seleccione un estado</option>
                                 <option value="Pendiente">Pendiente</option>
                                 <option value="No autorizado">No autorizado</option>
-                                <option selected value="Autorizado">Autorizado</option>
+                                <option value="Autorizado">Autorizado</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="col-form-label">Rol:</label>
+                            <select class="form-select" id="rol" aria-label="Default select example">
+                                <option selected disabled value = "Ninguno">Seleccione un rol</option>
+                                <option value="Administrador" id = "Administrador">Administrador</option>
+                                <option value="Vendedor" id = "Vendedor">Vendedor</option>
+                                <option value="Ninguno" id = "Ninguno">-</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success">Modificar</button>
+                    <button type="button" id ="cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id ="modificar" class="btn btn-success">Modificar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-compat.min.js" integrity="sha512-J1Og9E3kfO9xj2cBHZAXEqF5G9i4/Mh0i7l4x7Qq1XNhH4W80ghhA/x0chx1OnPNZgQ3JKlb0QTUaXxx1+zGWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type = "module" src="./modal.js"></script>
     <script type = "module" src="./Firebase.js"></script>
+    <script type = "module" src = "UpdateUser.js"></script>
 </body>
 
 </html>
