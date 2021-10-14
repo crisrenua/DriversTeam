@@ -25,7 +25,7 @@ productList();
 
 // Variables DOM
 
-const idProducto = document.getElementById('idProducto')
+// const idProducto = document.getElementById('idProducto')
 const descripcion = document.getElementById('descripcion')
 const valorUnitario = document.getElementById('valor-unitario')
 const estado = document.getElementById('estadoProducto')
@@ -88,9 +88,8 @@ async function productList() {
 
 // Funciones
 
-async function adicionarInfo(infoUno, infoDos, infoTres, infoCuatro){
+async function adicionarInfo(infoDos, infoTres, infoCuatro){
     const info = {
-        idProducto: infoUno,
         descripcion: infoDos,
         valorUnitario: infoTres,
         estado: infoCuatro,
@@ -113,11 +112,10 @@ async function guardarInfo(info){
 
 formularioModal.addEventListener('submit', (e)=>{
     e.preventDefault()
-    const infoUno = idProducto.value
     const infoDos = descripcion.value
     const infoTres = valorUnitario.value
     const infoCuatro = estado.value
-    adicionarInfo(infoUno, infoDos, infoTres, infoCuatro)
+    adicionarInfo(infoDos, infoTres, infoCuatro)
 
 })
 
@@ -163,10 +161,10 @@ modalRegistroProducto.addEventListener('show.bs.modal', function (event) {
     // and then do the updating in a callback.
     //
     // Update the modal's content.
-    var modalTitle = modalRegistroProducto.querySelector('.modal-title')
-    var modalBodyInput = modalRegistroProducto.querySelector('.modal-body input')
+    // var modalTitle = modalRegistroProducto.querySelector('.modal-title')
+    // var modalBodyInput = modalRegistroProducto.querySelector('.modal-body input')
 
-    modalTitle.textContent = 'Producto ' + usuario
-    modalBodyInput.value = recipient
+    // modalTitle.textContent = 'Producto ' + usuario
+    // modalBodyInput.value = recipient
 })
 
