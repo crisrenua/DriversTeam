@@ -39,8 +39,9 @@
         Agregar ventas
     </a> -->
 
-    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroVenta" idVenta="001"
-        cliente="Juan Sanchez" idCliente="123456789">Agregar venta</button>
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroVenta">
+        Agregar venta
+    </button>
 
     <br>
 
@@ -59,8 +60,10 @@
                 <th scope="col">Vendedor</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tbody id="tableBody">
+
+            
+            <!-- <tr>
                 <th scope="row">001</th>
                 <td>En proceso</td>
                 <td>27-sep-2021</td>
@@ -87,7 +90,7 @@
                 <td> Viviana Mejia </td>
                 <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
                     cliente = "Felipe Clavijo" data-bs-whatever="20.000"><i class="fas fa-pen-square"></i></button></td>
-            </tr>
+            </tr> -->
             
         </tbody>
     </table>
@@ -95,7 +98,7 @@
 
 <!-- Modal editar-->
 
-<div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<!-- <div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -135,7 +138,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Modal registro ventas-->
 
@@ -152,7 +155,7 @@
 
                     <div>
                         
-                        <input type="text" placeholder="Nombre del cliente">
+                        <input type="text" placeholder="Nombre del cliente" id="nombreCliente">
 
                     </div>
 
@@ -160,9 +163,9 @@
 
                     <div>
 
-                        <h5>C.C <input type="radio" name="id"></h5>
+                        <h5>C.C <input type="radio" name="id" id="c.c"></h5>
                         <!-- <h5>T.I <input type="radio" name="id"></h5> -->
-                        <h5>Passport <input type="radio" name="id"></h5>
+                        <h5>Passport <input type="radio" name="id" id="passport"></h5>
 
                     </div>
 
@@ -170,7 +173,7 @@
 
                     <div class="mb-2">
 
-                        <input type="text" placeholder="Id del cliente">
+                        <input type="text" placeholder="Id del cliente" id="idCliente">
 
                     </div>
 
@@ -189,8 +192,8 @@
                                     <th>Cantidad a agregar</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
+                            <tbody id="tableBodyModal">
+                                <!-- <tr>
                                     <th>Hamburguesa</th>
                                     <th>500 gr de carne <br> con papas y gaseosa</th>
                                     <th>20.000</th>
@@ -207,7 +210,7 @@
                                     <th>
                                         <input type="number" name="cantidad">
                                     </th>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                 </form>
@@ -220,9 +223,20 @@
     </div>
 </div>
 
-<script src="/Ventas/modal-editar.js"></script>
+<!-- Firebase -->
 
-<script type="module" src="/Ventas/ventas.js"></script>
+<!-- Firebase SDK (Software Development Kit) siempre se debe usar y debe ser el primero de colocar -->
+<script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
+
+<!-- Adicionar productos de Firebase que vamos a usar, servicio de base de datos -->
+<script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore-compat.js"></script>
+
+<!-- UUID, libreria de hash automatico para vincular ID's-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+    integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="module" src="./ventas.js"></script>
 
 </body>
 
