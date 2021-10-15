@@ -18,8 +18,8 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const database = firebase.firestore()
 const dataBase = firebaseApp.firestore();
-const onProducts = (callback) => dataBase.collection("productos").onSnapshot(callback);
-productList();
+//-const onProducts = (callback) => dataBase.collection("productos").onSnapshot(callback);
+//-productList();
 
 
 
@@ -34,44 +34,6 @@ const formularioModal = document.getElementById('formulario-registro-producto')
 
 // Funciones
 
-//UserList gets the users collection in real time, this function list users and its modifies atributes into the table body.
-async function productList() {
-
-    onProducts((prodcuts) => {
-
-        const table = document.getElementById("tableBody");
-        table.innerHTML = '';
-
-        prodcuts.forEach(product => {
-            const prodcutData = product.data();
-            let newRow = table.insertRow();
-            let newCell = newRow.insertCell(-1);
-            let newCell2 = newRow.insertCell(-1);
-            let newCell3 = newRow.insertCell(-1);
-            let newCell4 = newRow.insertCell(-1);
-            let newCell5 = newRow.insertCell(-1);
-            let newText = document.createTextNode(product.id);
-            let newText2 = document.createTextNode(prodcutData.descripcion);
-            let newText3 = document.createTextNode(prodcutData.valorUnitario);
-            let newText4 = document.createTextNode(prodcutData.estado);
-            const button = document.createElement("button");
-            button.type = "button";
-            button.innerHTML = ('<i class="fas fa-pen-square"></i>');
-            button.className = "btn btn-dark";
-            button.dataset.bsToggle = "modal";
-            button.dataset.bsTarget = "#exampleModal"
-            button.dataset.user = prodcutData.nombre;
-            button.dataset.bsWhatever = prodcutData.correo;
-            newCell.appendChild(newText);
-            newCell2.appendChild(newText2);
-            newCell3.appendChild(newText3);
-            newCell4.appendChild(newText4);
-            newCell5.appendChild(button);
-
-        });
-
-    })
-}
 
 async function adicionarInfo(infoUno, infoDos, infoTres){
     const info = {
@@ -88,9 +50,15 @@ async function guardarInfo(info){
         await database.collection("productos").add(info)
     } catch (error) {
         console.error()
-        throw new Error(error)        
+        throw new Error(error) 
+        
+       
     }
-
+    Swal.fire({
+        icon: 'success',
+        title: '',
+        text: 'Producto registrado con exito.'
+      });
 }
 
 // Eventos
@@ -110,28 +78,10 @@ formularioModal.addEventListener('submit', (e)=>{
 
 // variables DOM
 
-const modalEditar = document.getElementById('modalEditar')
+//const modalEditar = document.getElementById('modalEditar')
 const modalRegistroProducto = document.getElementById('modalRegistroProducto')
 
-// Modal editar
 
-modalEditar.addEventListener('show.bs.modal', function (event) {
-    // Button that triggered the modal
-    const button = event.relatedTarget
-    // Extract info from data-bs-* attributes
-    const usuario = button.getAttribute('user')
-    const recipient = button.getAttribute('data-bs-whatever')
-    // If necessary, you could initiate an AJAX request here
-    const idprod = button.getAttribute('idprod');
-    // and then do the updating in a callback.
-    //
-    // Update the modal's content.
-    var modalTitle = modalEditar.querySelector('.modal-title')
-    var modalBodyInput = modalEditar.querySelector('.modal-body input')
-
-    modalTitle.textContent = 'Producto ' + usuario
-    modalBodyInput.value = recipient
-})
 
 // Modal registro producto
 
