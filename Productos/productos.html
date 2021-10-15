@@ -23,25 +23,21 @@
     <!--Lista de productos-->
 
         <div class="container align-self-center">
-
-        <br>
-
-            <h1>Productos</h1>
-
-        <br>
         
+            <h2>Productos</h2>
+               
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Id producto, descripcion, estado "
                 aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-dark" type="button" id="button-addon2">Buscar</button>
         </div>
         
-        <br>
-
-        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroProducto" user="Cerveza"
-            data-bs-whatever="$ 12.000">Registro producto</button>
         
-        <br>
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroProducto" user=""
+            data-bs-whatever="">Registro producto</button>
+        
+        
 
         <table class="table caption-top table-hover">
 
@@ -67,7 +63,7 @@
     </button>-->
 
     <!-- Modal editar-->
-    <div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -78,24 +74,24 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="usuario-name" class="col-form-label">Valor Unitario:</label>
-                            <input type="text" class="form-control" id="usuario-name">
+                            <label for="valorUnitario" class="col-form-label">Valor Unitario:</label>
+                            <input type="text" class="form-control" id="valorUnitario">
                         </div>
                         
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Estado:</label>
-                            <select class="form-select" id = "message-tex" aria-label="Default select example">
+                            <label for="estado" class="col-form-label">Estado:</label>
+                            <select class="form-select" id = "estado" aria-label="Default select example">
                                 <option selected disabled>Seleccione un estado</option>
-                                <option value="1">Disponible</option>
-                                <option value="2">No disponible</option>
+                                <option value="Disponible">Disponible</option>
+                                <option value="No Disponible">No disponible</option>
                                
                               </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success">Actualizar</button>
+                    <button type="button" id ="cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id ="actualizar" class="btn btn-success">Actualizar</button>
                 </div>
             </div>
         </div>
@@ -154,7 +150,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
         integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-compat.min.js" integrity="sha512-J1Og9E3kfO9xj2cBHZAXEqF5G9i4/Mh0i7l4x7Qq1XNhH4W80ghhA/x0chx1OnPNZgQ3JKlb0QTUaXxx1+zGWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type = "module" src="./modalProduct.js"></script>
+        <script type = "module" src="./listaProduct.js"></script>
+        <script type = "module" src = "UpdateProduct.js"></script>
 
     <script  src="./productos.js"></script>
 </body>
