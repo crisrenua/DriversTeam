@@ -8,8 +8,6 @@ const firebaseConfig = {
 };
 
 
-
-
 // Inicializacion db
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

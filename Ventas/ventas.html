@@ -58,6 +58,7 @@
                 <th scope="col">Cliente</th>
                 <th scope="col">Id cliente</th>
                 <th scope="col">Vendedor</th>
+                <th scope="col">Editar</th>
             </tr>
         </thead>
         <tbody id="tableBody">
@@ -151,7 +152,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="formularioRegistroVentas">
 
                     <div>
                         
@@ -159,15 +160,15 @@
 
                     </div>
 
-                    <br>
+                    <!-- <br>
 
                     <div>
 
-                        <h5>C.C <input type="radio" name="id" id="c.c"></h5>
-                        <!-- <h5>T.I <input type="radio" name="id"></h5> -->
-                        <h5>Passport <input type="radio" name="id" id="passport"></h5>
+                        <h5>C.C <input type="radio" name="c.c" id="tipoId"></h5>
+                        <h5>T.I <input type="radio" name="id"></h5>
+                        <h5>Passport <input type="radio" name="passport" id="tipoId"></h5>
 
-                    </div>
+                    </div> -->
 
                     <br>
 
@@ -213,11 +214,11 @@
                                 </tr> -->
                             </tbody>
                         </table>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>
+                        </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success">Confirmar</button>
             </div>
         </div>
     </div>
@@ -236,7 +237,7 @@
     integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script type="module" src="./ventas.js"></script>
+<script src="./ventas.js"></script>
 
 </body>
 
