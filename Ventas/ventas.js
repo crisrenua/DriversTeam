@@ -152,12 +152,18 @@ async function adicionarInfo(infoUno, infoDos, productos, infoCuatro) {
 
 async function guardarInfo(info) {
     try {
-        await dataBase.collection("ventas").add(info)
+        await database.collection("ventas").add(info)
     } catch (error) {
         console.error()
         throw new Error(error)
-    }
 
+
+    }
+    Swal.fire({
+        icon: 'success',
+        title: '',
+        text: 'Venta registrada con exito.'
+    });
 }
 
 // Eventos
@@ -173,7 +179,6 @@ formularioModalVentas.addEventListener('submit', (e) => {
         let element = document.getElementById(i)
 
         if(element.value){
-            // listaInputs.push(element.value)
             productos[`producto${i+1}`] = {
                 cantidad: element.value,
                 precioPorCantidad: productosActuales[i][2]*element.value,
@@ -182,55 +187,8 @@ formularioModalVentas.addEventListener('submit', (e) => {
             } 
 
             infoCuatro += productosActuales[i][2] * element.value
-
-            // obj.key3 = "value3";
         }
     }
 
     adicionarInfo(infoUno, infoDos, productos, infoCuatro)
 })
-
-// -----------------------------------------------------------------------------------------
-
-// Modales
-
-// Modal editar
-
-// modalEditar.addEventListener('show.bs.modal', function (event) {
-//     // Button that triggered the modal
-//     const button = event.relatedTarget
-//     // Extract info from data-bs-* attributes
-//     const usuario = button.getAttribute('user')
-//     const recipient = button.getAttribute('data-bs-whatever')
-//     // If necessary, you could initiate an AJAX request here
-//     const idprod = button.getAttribute('idprod');
-//     // and then do the updating in a callback.
-//     //
-//     // Update the modal's content.
-//     var modalTitle = modalEditar.querySelector('.modal-title')
-//     var modalBodyInput = modalEditar.querySelector('.modal-body input')
-
-//     modalTitle.textContent = 'Producto ' + usuario
-//     modalBodyInput.value = recipient
-// })
-
-// Modal registro producto
-
-// modalRegistroVenta.addEventListener('show.bs.modal', function (event) {
-//     Button that triggered the modal
-//     const button = event.relatedTarget
-//     Extract info from data-bs-* attributes
-//     const usuario = button.getAttribute('user')
-//     const recipient = button.getAttribute('data-bs-whatever')
-//     If necessary, you could initiate an AJAX request here
-//     const idprod = button.getAttribute('idprod');
-//     and then do the updating in a callback.
-    
-//     Update the modal's content.
-//     var modalTitle = modalRegistroProducto.querySelector('.modal-title')
-//     var modalBodyInput = modalRegistroProducto.querySelector('.modal-body input')
-
-//     modalTitle.textContent = 'Producto ' + usuario
-//     modalBodyInput.value = recipient
-// })
-

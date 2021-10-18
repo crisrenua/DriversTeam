@@ -35,10 +35,6 @@
 
     <br>
 
-    <!-- <a class="btn btn-dark" href="formulario_ventas.html">
-        Agregar ventas
-    </a> -->
-
     <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRegistroVenta">
         Agregar venta
     </button>
@@ -61,85 +57,10 @@
                 <th scope="col">Editar</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
-
-            
-            <!-- <tr>
-                <th scope="row">001</th>
-                <td>En proceso</td>
-                <td>27-sep-2021</td>
-                <td> Hamburguesa <br> Cerveza </td>
-                <td> 2 <br> 2 </td>
-                <td> 20.000 <br> 30.000 </td>
-                <td> 100.000 </td>
-                <td> Juan Sanchez </td>
-                <td> 123456789 </td>
-                <td> Enrique Perez </td>
-                <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
-                    idVenta = "001" cliente ="Juan Sanchez" idCliente = "123456789"><i class="fas fa-pen-square"></i></button></td>
-            </tr>
-            <tr>
-                <th scope="row">002</th>
-                <td>En proceso</td>
-                <td>28-sep-2021</td>
-                <td> Nachos </td>
-                <td> 3 </td>
-                <td> 20.000 </td>
-                <td> 60.000 </td>
-                <td> Felipe Clavijo </td>
-                <td> 12345600 </td>
-                <td> Viviana Mejia </td>
-                <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEditar"
-                    cliente = "Felipe Clavijo" data-bs-whatever="20.000"><i class="fas fa-pen-square"></i></button></td>
-            </tr> -->
-            
+        <tbody id="tableBody">            
         </tbody>
     </table>
 </div>
-
-<!-- Modal editar-->
-
-<!-- <div class="modal fade" id="modalEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Actualizar venta</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Estado:</label>
-                        <select class="form-select" id = "message-tex" aria-label="Default select example">
-                            <option selected disabled>Seleccione un estado</option>
-                            <option value="1">En proceso</option>
-                            <option value="2">Cancelada</option>
-                            <option value="2">Entregada</option>
-                           
-                          </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="cliente" class="col-form-label">Cliente:</label>
-                        <input type="text" class="form-control" id="cliente">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="idCliente" class="col-form-label">Id cliente:</label>
-                        <input type="text" class="form-control" id="idCliente">
-                    </div>
-        
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success">Actualizar</button>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <!-- Modal registro ventas-->
 
@@ -193,26 +114,7 @@
                                     <th>Cantidad a agregar</th>
                                 </tr>
                             </thead>
-                            <tbody id="tableBodyModal">
-                                <!-- <tr>
-                                    <th>Hamburguesa</th>
-                                    <th>500 gr de carne <br> con papas y gaseosa</th>
-                                    <th>20.000</th>
-                                    <th> Disponible </th>
-                                    <th>
-                                        <input type="number" name="cantidad">
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>Cerveza</th>
-                                    <th>Jarra de 2 litros</th>
-                                    <th>30.000</th>
-                                    <th> Disponible </th>
-                                    <th>
-                                        <input type="number" name="cantidad">
-                                    </th>
-                                </tr> -->
-                            </tbody>
+                            <tbody id="tableBodyModal"></tbody>
                         </table>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -236,6 +138,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
     integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-compat.min.js" integrity="sha512-J1Og9E3kfO9xj2cBHZAXEqF5G9i4/Mh0i7l4x7Qq1XNhH4W80ghhA/x0chx1OnPNZgQ3JKlb0QTUaXxx1+zGWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="./ventas.js"></script>
 
