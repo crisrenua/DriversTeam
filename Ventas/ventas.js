@@ -16,7 +16,6 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 // variables
 
-const database = firebase.firestore()
 const dataBase = firebaseApp.firestore();
 const onProducts = (callback) => dataBase.collection("productos").onSnapshot(callback);
 const onSales = (callback) => dataBase.collection("ventas").onSnapshot(callback);
@@ -152,7 +151,7 @@ async function adicionarInfo(infoUno, infoDos, productos, infoCuatro) {
 
 async function guardarInfo(info) {
     try {
-        await database.collection("ventas").add(info)
+        await dataBase.collection("ventas").add(info)
     } catch (error) {
         console.error()
         throw new Error(error)
