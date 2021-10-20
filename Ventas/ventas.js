@@ -173,18 +173,19 @@ formularioModalVentas.addEventListener('submit', (e) => {
     const infoDos = idCliente.value
     const productos = {}
     let infoCuatro = 0
+    let counter = 1
 
     for (let i = 0; i < productosActuales.length; i++) {
         let element = document.getElementById(i)
 
         if(element.value){
-            productos[`producto${i+1}`] = {
+            productos[`producto${counter}`] = {
                 cantidad: element.value,
                 precioPorCantidad: productosActuales[i][2]*element.value,
                 precioUnitario: productosActuales[i][2],
                 producto: productosActuales[i][1],
             } 
-
+            counter ++
             infoCuatro += productosActuales[i][2] * element.value
         }
     }
